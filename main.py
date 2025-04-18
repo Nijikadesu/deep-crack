@@ -66,7 +66,7 @@ class Trainer():
         for param in model.parameters():
             param.requires_grad = True
         model.train(data=self.name_yaml, device="0", imgsz=640, epochs=self.epochs[3], batch=self.batch_sizes[3], 
-                    workers=0, name=self.path_finetune)
+                    workers=0, name=self.path_finetune, prune=True)
         # self.val(stage)
 
     def train_pipeline(self):
